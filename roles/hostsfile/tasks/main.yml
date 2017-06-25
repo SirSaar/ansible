@@ -1,0 +1,7 @@
+- name: dns names in hosts file
+  lineinfile:
+     dest: /etc/hosts
+     line: "{{ item.ip }} {{ item.name }} {{ item.name }}"
+  with_items:
+         - { name: 'Sanjer', ip: "{{ Sanjer_IP }}" } 
+         - { name: 'Test', ip: "{{ Test_IP }}" }
